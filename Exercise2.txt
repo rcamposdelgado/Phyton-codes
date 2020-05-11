@@ -1,0 +1,5 @@
+Exercise 2
+1. cat `cat test.dat`
+2. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt
+4. find . -name *.txt 
+5. find . -name *.txt -exec cat {} + | wc -l 
