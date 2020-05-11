@@ -50,8 +50,8 @@ Then I type the command    tar -zvxf test2.tar.gz -C /home/user/test3
 
 2) More complex shell usage
 
-1. cat `cat test.dat`
-2. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt
-3. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt | sort
-4. find . -name *.txt 
-5. find . -name *.txt -exec cat {} + | wc -l 
+1. cat `cat test.dat`                                           command for making the test.dat to print the contents of test.txt
+2. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt          we created the document col.txt which contains two columns; in the                                                                       terminal we print on two columns the results for the average and the sum                                                                 for the columns in col.txt  
+3. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt | sort   we sort the results obtained before
+4. find . -name *.txt                                           we find all the files called *.txt
+5. find . -name *.txt -exec cat {} + | wc -l                    we count the total number of lines of the files listed from the above                                                                   find command
