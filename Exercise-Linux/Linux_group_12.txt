@@ -1,0 +1,57 @@
+1) Basic shell commands
+
+1 I am in the directory /home/user. I use the command 'pwd' to find in which directory I am currently in.
+
+2 I type the following command in the terminal:   echo "$SHELL"
+
+3 I've created the file me.txt in my home directory.
+
+4 I write in the terminal the name of the object that I want in backround, followed by ampersand. In this case, I write    nano me.txt &
+
+5 I type the following command in the terminal:  mkdir /home/user/test1
+
+6 First I copy the file with the command:  cp me.txt /home/user/test1      then I go the subdirectory, and I rename the file with the command     mv me.txt me_copy.txt
+
+7 I have used an absolute path.
+
+8 To go from the home directory to the subdirectory, I type the command     cd /home/user/test1
+To go from the subdirectory to the home directory, I type the command    cd ..
+
+9 While being in my home directory, I type the command 
+mv /home/user/test1/me_copy.txt   /home/user/test1/me_renames.txt
+
+10 While being in the subdirectory, I type the command      echo "01/08/1996" >> me_renames.txt
+In the previous step I've renamed me_copy.txt to me_renames.txt, that's the reason why I work with the file me_renames.txt
+
+11 In my home directory I type the command     diff me.txt /home/user/test1/me_renames.txt
+The output is
+1a2
+> 01/08/1996
+
+12 I use the option -h -l to show the size. I type:
+ls -h -l /home/user/me.txt /home/user/test1/me_renames.txt
+
+13 I type the following command:    rm -r /home/user/test1/
+
+14 I type the following commands:
+mkdir test2                      to create a subdirectory
+cp me.txt /home/user/test2/      to copy me.txt in the subdirectory
+cd /home/user/test2/             to access the subdirectory
+mv me.txt me_copy1.txt           to rename the first file
+cp me_copy1.txt me_copy2.txt     to copy this file with another name
+
+For the second part, I use the command:
+tar cvzf test2.tar.gz /home/user/test2
+
+15 First I create the directory test3 with:     mkdir test3
+Then I type the command    tar -zvxf test2.tar.gz -C /home/user/test3
+
+
+
+2) More complex shell usage
+
+1. cat `cat test.dat`
+2. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt
+3. awk '!(NR%1){print (($1+$2)/2 " "  $1+$2)}' col.txt | sort
+4. find . -name *.txt 
+5. find . -name *.txt -exec cat {} + | wc -l 
